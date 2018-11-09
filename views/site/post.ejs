@@ -1,0 +1,48 @@
+<%- include('../header') %>
+<article>
+    <div class="article-head">
+        <h1><%= post.title %></h1>
+        <p>
+            <% if (post.username) { %>
+            Posted by <%= post.username %>,
+            <% } %>
+            <time><%= post.created_at %></time>
+        </p>
+        <p class="terms-list">
+            <% if (typeof terms.category !== 'undefined') { %>
+            <% terms.category.forEach(function(val) { %>
+            <button type="button" class="btn btn-primary">
+                <a href="<%= `/category/${val.slug}` %>" class="icon-quill"><%= val.title %></a>
+            </button>
+            <% }) %>
+            <% } %>
+        </p>
+    </div>
+    <hr>
+    <div class="article-body"><%- post.content %></div>
+
+    <hr>
+    <form method="post" action="/edit/new-comment/<%= post.id %>" class="mb-sm-4">
+            <input type="hidden" name="id" value="<%= post.id %>">
+            <div class="form-group">
+                <h4>Comments</h4>
+                <div class="form-group">
+                <textarea name="content" rows="6" class="form-control" id="content-input" placeholder="Enter comment" ></textarea>
+            </div>
+            </div>
+     <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+
+    <% if (list.length) { %>
+    <div class="terms-list">
+        <% list.forEach(function(val) { %>
+         <div class="form-group">
+        Posted by <%= val.author %></a> : <%= val.content %></a>
+
+        </div>
+        <% }) %>
+    </div>
+    <% } %>
+
+</article>
+<%- include('../footer') %>
