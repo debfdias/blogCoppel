@@ -5,7 +5,7 @@ module.exports = {
     DB: {
         host : 'localhost',
         user : 'root',
-        password : 'root',
+        password : '',
         database : 'web'
     },
     MarkedOptions: {

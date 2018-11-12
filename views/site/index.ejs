@@ -5,14 +5,21 @@
 <% } %>
 
 <% list.forEach(function(val) { %>
-<div class="jumbotron">
-    <h2 class="display-4"><%= val.title %></h2>
+<div class="jumbotron_box">
+    <h2 class="display-5"><%= val.title %></h2>
     <p class="lead"><%= val.description %></p>
     <hr class="my-4">
     <p class="lead">
-        <a class="btn btn-primary" href="<%= `/post/${val.id}` %>" role="button">Read more</a>
+        <a class="btn btn2-primary" href="<%= `/post/${val.id}` %>" role="button">Read more</a>
     </p>
 </div>
 <% }) %>
+
+<% if(!list.length){   %>
+
+<h2 class="display-4">No posts yet.</h2>
+<%}  %>
+
+
 
 <%- include('../footer') %>

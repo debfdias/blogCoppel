@@ -30,19 +30,29 @@
                 <textarea name="content" rows="6" class="form-control" id="content-input" placeholder="Enter comment" ></textarea>
             </div>
             </div>
-     <button type="submit" class="btn btn-primary">Post</button>
+     <button type="submit" class="btn btn2-primary">Post</button>
     </form>
 
     <% if (list.length) { %>
     <div class="terms-list">
         <% list.forEach(function(val) { %>
+        <div class="jumbotron_box">
+        
          <div class="form-group">
-        Posted by <%= val.author %></a> : <%= val.content %></a>
+            Posted by <%= val.author %></a> 
+            <hr class="my-1">
+            <%= val.content %></a>
 
+        </div>
         </div>
         <% }) %>
     </div>
     <% } %>
+
+
+<% if(!list.length){   %>
+No comments yet.
+<%}  %>
 
 </article>
 <%- include('../footer') %>

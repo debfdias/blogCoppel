@@ -23,8 +23,9 @@ img {
 
 .footer {
     height: 60px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
+    color: #d5d9dd;
+    background-color: #22272a;
+    border-top: 1px solid #d5d9dd;
     padding-top: 20px;
 }
 
@@ -41,3 +42,36 @@ img {
     text-decoration: none;
 }
 
+.jumbotron_box {
+    padding:1rem;
+    margin-bottom:1rem;
+    background-color:#f1f2f4;
+    border-radius:.8rem}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+
+.btn2-primary {
+    color: #fff;
+    background-color: #e68a00;
+    border-color: #ffb84d;
+}
+.btn2-primary:hover {
+    color: #fff;
+    background-color: #ffad33;
+    border-color: #ffd699;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}

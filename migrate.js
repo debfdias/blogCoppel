@@ -65,7 +65,7 @@ db.query(userTable).then(() => {
     console.log('Create user table done!');
     // Add admin user
     db.query('INSERT INTO user(email, username, password, role, created_at, updated_at) VALUES("admin@admin.com", "admin", ?, "admin", NOW(), NOW());', [md5('admin')]);
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 3; i++) {
         console.log(`Insert faker user data (${i})`);
         db.query('INSERT INTO user(email, username, password, created_at, updated_at) VALUES(?, ?, ?, NOW(), NOW());', [
             faker.internet.email(),
@@ -78,7 +78,7 @@ db.query(userTable).then(() => {
 console.log('Create post table...');
 db.query(postTable).then(() => {
     console.log('Create post table done!');
-    for (let i = 1; i <= 15; i++) {
+    for (let i = 1; i <= 3; i++) {
         console.log(`Insert faker post data (${i})`);
         db.query('INSERT INTO post(author, title, content, description, slug, created_at, updated_at) VALUES(?, ?, ?, ?, ?, NOW(), NOW());', [
             faker.random.arrayElement(_.range(1, 6)),
@@ -93,13 +93,13 @@ db.query(postTable).then(() => {
 console.log('Create term table...');
 db.query(termTable).then(() => {
     console.log('Create term table done!');
-    for (let i = 1; i <= 15; i++) {
+    for (let i = 1; i <= 3; i++) {
         console.log(`Insert faker term data (${i})`);
         db.query('INSERT INTO term(title, description, slug, type, created_at, updated_at) VALUES(?, ?, ?, ?, NOW(), NOW());', [
             faker.lorem.words(),
             faker.lorem.paragraph(),
             faker.lorem.slug(),
-            faker.random.arrayElement(['category', 'tag'])
+            faker.random.arrayElement(['category'])
         ]);
     }
 });
@@ -107,11 +107,11 @@ db.query(termTable).then(() => {
 console.log('Create relationship table...');
 db.query(relationshipTable).then(() => {
     console.log('Create relationship table done!');
-    for (let i = 1; i <= 30; i++) {
+    for (let i = 1; i <= 4; i++) {
         console.log(`Insert faker relationship data (${i})`);
         db.query('INSERT INTO relationship(post_id, term_id) VALUES(?, ?);', [
-            faker.random.arrayElement(_.range(1, 15)),
-            faker.random.arrayElement(_.range(1, 15))
+            faker.random.arrayElement(_.range(1, 3)),
+            faker.random.arrayElement(_.range(1, 3))
         ]);
     }
 });
