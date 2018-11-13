@@ -7,6 +7,7 @@ var userRouter = require('./routes/user');
 var editRouter = require('./routes/edit');
 
 var app = express();
+var port = process.env.PORT || 3000;
 
 // body-parser
 app.use(bodyParser.urlencoded({
@@ -68,4 +69,4 @@ app.get('*', (req, res) => {
     res.status(404).render('error', {title: 'Not Found (#404)'});
 });
 
-app.listen(3000, () => console.log('Web app listening on port 3000!'));
+app.listen(port, () => console.log('Web app listening on port 3000!'));
