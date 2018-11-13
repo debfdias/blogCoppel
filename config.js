@@ -1,6 +1,6 @@
 var marked = require('marked');
 var highlightjs = require('highlightjs');
-/*
+
 module.exports = {
     DB: {
         host : 'localhost',
@@ -23,7 +23,7 @@ module.exports = {
     }
 };
 
-*/
+/*
 module.exports = {
     DB: {
         host : 'us-cdbr-iron-east-01.cleardb.net',
@@ -46,3 +46,4 @@ module.exports = {
         }
     }
 };
+*/
