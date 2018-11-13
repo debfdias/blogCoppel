@@ -1,6 +1,6 @@
 var marked = require('marked');
 var highlightjs = require('highlightjs');
-
+/*
 module.exports = {
     DB: {
         host : 'localhost',
@@ -23,13 +23,14 @@ module.exports = {
     }
 };
 
-/*
+*/
 module.exports = {
     DB: {
         host : 'us-cdbr-iron-east-01.cleardb.net',
         user : 'b1550945e27ce4',
         password : 'f7658585',
         database : 'heroku_62de7acbc1600c6'
+
     },
     MarkedOptions: {
         renderer: new marked.Renderer(),
@@ -45,4 +46,3 @@ module.exports = {
         }
     }
 };
-*/
